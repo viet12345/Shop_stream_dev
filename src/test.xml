@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Page Object test example">
+    <parameter name="browserType" value="chrome" />
+    <parameter name="appURL" value="https://brands-dev.shopstream360.com/" />
+    <test name="sample test 1">
+        <classes>
+            <class name="POM_structure.Testcases.Login_Testcase">
+                <methods>
+                    <include name="signIn1" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="sample test 2">
+        <classes>
+            <class name="POM_structure.Testcases.Login_Testcase">
+                <methods>
+                    <include name="signIn2" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
