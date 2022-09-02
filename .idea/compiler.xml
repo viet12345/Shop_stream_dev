@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="MavenProject" />
+        <module name="Shop_stream_dev" />
       </profile>
     </annotationProcessing>
   </component>
