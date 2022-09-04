@@ -73,6 +73,6 @@ public class Setup_Base {
     }
     public void tearDownClass() throws Exception {
         // Gọi lại hàm startRecord
-        recordVideoHelpers.stopRecord();
+//        recordVideoHelpers.stopRecord();
     }
 }

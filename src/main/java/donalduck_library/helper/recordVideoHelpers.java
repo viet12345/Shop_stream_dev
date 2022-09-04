@@ -3,10 +3,11 @@ package donalduck_library.helper;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import donalduck_library.utilities.PropertiesFile;
+import atu.testrecorder.ATUTestRecorder;
 import org.monte.media.Format;
 import org.monte.media.FormatKeys.MediaType;
 import org.monte.media.Registry;
@@ -71,5 +72,19 @@ public class recordVideoHelpers extends ScreenRecorder {
     // Stop record video
     public static void stopRecord() throws Exception {
         screenRecorder.stop();
+    }
+
+    // ------Record with ATU library-----------
+    public static ATUTestRecorder recorder;
+    static DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss");
+    static Date date = new Date();
+
+    public static void startRecordATU(String videoName) throws Exception {
+        recorder = new ATUTestRecorder("ExportData/CaptureVideo", videoName + "-" + dateFormat.format(date), false);
+        recorder.start();
+    }
+
+    public static void stopRecordATU() throws Exception {
+        recorder.stop();
     }
 }

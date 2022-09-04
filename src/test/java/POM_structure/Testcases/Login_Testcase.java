@@ -17,7 +17,7 @@ public class Login_Testcase extends Setup_Base {
     @BeforeClass
     public void setUp() throws Exception {
         driver = getDriver();
-        recordVideoHelpers.startRecord("Login screen");
+//        recordVideoHelpers.startRecord("Login screen");
     }
 
     @Test
@@ -48,14 +48,14 @@ public class Login_Testcase extends Setup_Base {
     }
 
 
-    @AfterMethod
-    public void takeScreenshot(ITestResult result) throws InterruptedException {
-        Thread.sleep(1000);
-        if (ITestResult.FAILURE == result.getStatus())
-        {
-            captureHelpers.captureScreenshot(driver, "Login screen");
-        }
-    }
+//    @AfterMethod
+//    public void takeScreenshot(ITestResult result) throws InterruptedException {
+//        Thread.sleep(1000);
+//        if (ITestResult.FAILURE == result.getStatus())
+//        {
+//            captureHelpers.captureScreenshot(driver, "Login screen");
+//        }
+//    }
 }
 
 
