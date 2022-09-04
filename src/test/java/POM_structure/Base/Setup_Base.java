@@ -7,6 +7,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
+import donalduck_library.helper.*;
+
 
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
@@ -68,5 +70,9 @@ public class Setup_Base {
     @AfterClass
     public void tearDown() {
         driver.quit();
+    }
+    public void tearDownClass() throws Exception {
+        // Gọi lại hàm startRecord
+        recordVideoHelpers.stopRecord();
     }
 }

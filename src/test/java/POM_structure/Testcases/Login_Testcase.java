@@ -1,6 +1,6 @@
 package POM_structure.Testcases;
 
-import donalduck_library.helper.ExcelHelpers;
+import donalduck_library.helper.*;
 import POM_structure.Base.Setup_Base;
 import POM_structure.Pages.Login_Page;
 import org.openqa.selenium.WebDriver;
@@ -13,12 +13,11 @@ import java.io.FileNotFoundException;
 public class Login_Testcase extends Setup_Base {
     private WebDriver driver;
     public Login_Page LoginPage;
-    private ExcelHelpers excel;
-    private donalduck_library.helper.captureHelpers captureHelpers;
 
     @BeforeClass
-    public void setUp() {
+    public void setUp() throws Exception {
         driver = getDriver();
+        recordVideoHelpers.startRecord("Login screen");
     }
 
     @Test
@@ -47,12 +46,14 @@ public class Login_Testcase extends Setup_Base {
                         { "viet1@gmail.com", "123123123","Password or email do not correct"}
                 };
     }
+
+
     @AfterMethod
     public void takeScreenshot(ITestResult result) throws InterruptedException {
         Thread.sleep(1000);
         if (ITestResult.FAILURE == result.getStatus())
         {
-            donalduck_library.helper.captureHelpers.captureScreenshot(driver, "Login screen");
+            captureHelpers.captureScreenshot(driver, "Login screen");
         }
     }
 }

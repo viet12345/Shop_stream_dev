@@ -12,6 +12,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class captureHelpers {
+    public captureHelpers(){
+
+    }
 
     //Lấy đường dẫn đến project hiện tại
     static String projectPath = System.getProperty("user.dir") + "/";
