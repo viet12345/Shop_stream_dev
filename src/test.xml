@@ -11,13 +11,13 @@
             </class>
         </classes>
     </test>
-    <test name="sample test 2">
-        <classes>
-            <class name="POM_structure.Testcases.Login_Testcase">
-                <methods>
-                    <include name="signIn2" />
-                </methods>
-            </class>
-        </classes>
-    </test>
+<!--    <test name="sample test 2">-->
+<!--        <classes>-->
+<!--            <class name="POM_structure.Testcases.Login_Testcase">-->
+<!--                <methods>-->
+<!--                    <include name="signIn2" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>

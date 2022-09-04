@@ -1,6 +1,6 @@
 package POM_structure.Testcases;
 
-import donalduck_library.helper.ExcelHelpers;
+import donalduck_library.helper.*;
 import POM_structure.Base.Setup_Base;
 import POM_structure.Pages.Login_Page;
 import org.openqa.selenium.WebDriver;
@@ -13,18 +13,17 @@ import java.io.FileNotFoundException;
 public class Login_Testcase extends Setup_Base {
     private WebDriver driver;
     public Login_Page LoginPage;
-    private ExcelHelpers excel;
-    private donalduck_library.helper.captureHelpers captureHelpers;
 
     @BeforeClass
-    public void setUp() {
+    public void setUp() throws Exception {
         driver = getDriver();
+        recordVideoHelpers.startRecord("Login screen");
     }
 
     @Test
     public void signIn1() throws FileNotFoundException, InterruptedException {
         LoginPage = new Login_Page(driver);
-        LoginPage.doLogin("viet1@adamodigital.com","12345678");
+        LoginPage.doLogin("viet0@adamodigital.com","12345678");
         String url=driver.getCurrentUrl();
         Assert.assertEquals(url,"https://brands-dev.shopstream360.com/");
     }
@@ -47,12 +46,14 @@ public class Login_Testcase extends Setup_Base {
                         { "viet1@gmail.com", "123123123","Password or email do not correct"}
                 };
     }
+
+
     @AfterMethod
     public void takeScreenshot(ITestResult result) throws InterruptedException {
         Thread.sleep(1000);
         if (ITestResult.FAILURE == result.getStatus())
         {
-            donalduck_library.helper.captureHelpers.captureScreenshot(driver, "Login screen");
+            captureHelpers.captureScreenshot(driver, "Login screen");
         }
     }
 }
