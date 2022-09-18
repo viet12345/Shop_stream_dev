@@ -23,7 +23,7 @@ public class Login_Testcase extends Setup_Base {
     @Test
     public void signIn1() throws FileNotFoundException, InterruptedException {
         LoginPage = new Login_Page(driver);
-        LoginPage.doLogin("viet0@adamodigital.com","12345678");
+        LoginPage.doLogin("viet1@adamodigital.com","12345678");
         String url=driver.getCurrentUrl();
         Assert.assertEquals(url,"https://brands-dev.shopstream360.com/");
     }
