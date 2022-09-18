@@ -47,15 +47,17 @@ public class Login_Page {
         btn_login_locator.click();
         Thread.sleep(1000);
         switch (message) {
-            case "The email field is required." -> {
+            case "The email field is required.": {
                 email_validate.getText().equals(message);
                 System.out.println("Email là bắt buộc pass");
+                break;
             }
-            case "The password field is required." -> {
+            case "The password field is required.": {
                 pw_validate.getText().equals(message);
                 System.out.println("Pw là bắt buộc pass");
+                break;
             }
-            default -> System.out.println("Login với thông tin sai");
+            default: System.out.println("Login với thông tin sai");
         }
     }
     //Clear field

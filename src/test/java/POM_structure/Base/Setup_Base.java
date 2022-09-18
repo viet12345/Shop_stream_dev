@@ -23,9 +23,11 @@ public class Setup_Base {
     //Hàm này để tùy chọn Browser. Cho chạy trước khi gọi class này (BeforeClass)
     private void setDriver(String browserType, String appURL) {
         switch (browserType) {
-            case "chrome" -> driver = initChromeDriver(appURL);
-            case "firefox" -> driver = initFirefoxDriver(appURL);
-            default -> {
+            case "chrome": driver = initChromeDriver(appURL);
+            break;
+            case "firefox": driver = initFirefoxDriver(appURL);
+            break;
+            default: {
                 System.out.println("Browser: " + browserType + " is invalid, Launching Chrome as browser of choice...");
                 driver = initChromeDriver(appURL);
             }
